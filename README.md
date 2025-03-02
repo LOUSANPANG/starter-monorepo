@@ -1,34 +1,55 @@
-# pkg-placeholder
+# monorepo架构应用
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![bundle][bundle-src]][bundle-href]
-[![JSDocs][jsdocs-src]][jsdocs-href]
-[![License][license-src]][license-href]
+## 工程介绍
 
-_description_
+### 目录
 
-## Sponsors
+```bash
+-| .vscode
+-| docs # 使用文档
+-| packages # 子工程
+-| playground # 应用演示
+-| utils # 工具
+```
 
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg'/>
-  </a>
-</p>
+## 工程使用
 
-## License
+### 使用命令
 
-[MIT](./LICENSE) License © [Anthony Fu](https://github.com/antfu)
+```bash
+# 作用范围命令
+pnpm -C packages/* add xxx # 执行子包操作
+pnpm -W add xxx # 执行根目录操作
+pnpm -F packages/* add xxx # 执行子包操作
+pnpm -r update # 递归地更新所有子包的依赖
+pnpm up -r --workspace xxx # 在整个 workspace（工作区）内递归更新 xxx 这个依赖
 
-<!-- Badges -->
+pnpm import # npm/yarn 迁移到 pnpm
+pnpm rebuild # 切换 Node.js 版本、原生模块出错 重新编译依赖
+pnpm prune # 清理无用依赖
+pnpm dedupe # 合并重复依赖，优化 pnpm-lock.yaml
 
-[npm-version-src]: https://img.shields.io/npm/v/pkg-placeholder?style=flat&colorA=080f12&colorB=1fa669
-[npm-version-href]: https://npmjs.com/package/pkg-placeholder
-[npm-downloads-src]: https://img.shields.io/npm/dm/pkg-placeholder?style=flat&colorA=080f12&colorB=1fa669
-[npm-downloads-href]: https://npmjs.com/package/pkg-placeholder
-[bundle-src]: https://img.shields.io/bundlephobia/minzip/pkg-placeholder?style=flat&colorA=080f12&colorB=1fa669&label=minzip
-[bundle-href]: https://bundlephobia.com/result?p=pkg-placeholder
-[license-src]: https://img.shields.io/github/license/antfu/pkg-placeholder.svg?style=flat&colorA=080f12&colorB=1fa669
-[license-href]: https://github.com/antfu/pkg-placeholder/blob/main/LICENSE
-[jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
-[jsdocs-href]: https://www.jsdocs.io/package/pkg-placeholder
+pnpm exec # 执行本地 node_modules/.bin 中的命令
+pnpm dlx # 执行从 npm registry 下载并临时运行的包
+pnpm create # 通过预设模板创建项目
+
+pnpm self-update # pnpm 更新
+```
+
+### 应用命令
+
+```bash
+```
+
+### 根目录依赖
+
+```bash
+# changeset
+# init
+pnpm add -Dw @changesets/cli
+pnpm changeset init
+# 记录变更
+pnpm changeset
+# 生成版本号
+pnpm changeset version
+```
