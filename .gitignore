@@ -1,6 +1,14 @@
+.cache
 .DS_Store
 .idea
+.git
+pnpm-lock.yaml
 *.log
+*.tgz
+coverage
 dist
 logs
 node_modules
+temp
+cache
+.eslintcache
