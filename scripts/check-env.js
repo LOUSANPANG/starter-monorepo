@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
+import process from 'node:process'
+
 const requiredMajorVersion = 20
 const currentVersion = process.version
 
-const majorVersion = parseInt(currentVersion.replace(/^v/, '').split('.')[0], 10)
+const majorVersion = Number.parseInt(currentVersion.replace(/^v/, '').split('.')[0], 10)
 
 if (majorVersion < requiredMajorVersion) {
   console.error(`❌ Node.js ${requiredMajorVersion}+ is required. You are using ${currentVersion}.`)
