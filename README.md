@@ -5,11 +5,19 @@
 ### 目录
 
 ```bash
--| .vscode
--| docs # 使用文档
--| packages # 子工程
--| playground # 应用演示
--| utils # 工具
+├── .vscode
+├── docs # 使用文档
+├── templates # 模板
+├── playground # 应用演示
+├── packages # 子工程
+│   ├── pkg-eslint/ # 代码格式包
+│   ├── pkg-ui/ # ui包
+│   └── pkg-utils/ # 工具包
+├── app # 子工程
+│   ├── react-app # react子工程
+│   └── vue-app # vue子工程
+├── package.json
+├── pnpm-workspace.yaml
 ```
 
 ## 工程使用
