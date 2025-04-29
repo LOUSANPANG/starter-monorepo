@@ -1,30 +1,10 @@
 {
   "name": "starter-monorepo",
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "LOUSANPANG",
   "scripts": {
-    "pnpm:devPreinstall": "echo 'Checking environment before install...' && node scripts/check-env.js",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix",
-    "changelog": "pnpm changeset && pnpm changeset version",
-    "prepare": "simple-git-hooks",
-    "build": "pnpm -r --filter ./app/... run build"
+    "build:apps": "pnpm --filter ./apps/** run build"
   },
-  "devDependencies": {
-    "@antfu/eslint-config": "^4.4.0",
-    "@changesets/cli": "^2.28.1",
-    "@eslint-react/eslint-plugin": "^1.30.0",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "lint-staged": "^15.4.3",
-    "simple-git-hooks": "^2.11.1"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
-  }
+  "devDependencies": {}
 }
