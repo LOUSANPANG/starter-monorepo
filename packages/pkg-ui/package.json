@@ -1,0 +1,36 @@
+{
+  "name": "@common/pkg-ui",
+  "version": "0.0.1",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "rimraf dist && vite build",
+    "dev": "rimraf dist && vite build --watch",
+    "type-check": "rimraf dist && vue-tsc --noEmit"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3",
+    "vite": "^4.5.13",
+    "vite-plugin-dts": "^4.5.3",
+    "vue": "^3.5.13",
+    "vue-tsc": "^1.8.27"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "tailwindcss": "^4.1.4"
+  }
+}
